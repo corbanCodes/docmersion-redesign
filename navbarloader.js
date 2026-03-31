@@ -1,4 +1,21 @@
 // Navbar Loader - Loads consistent navbar across all pages
+
+// Load Google Analytics / Google Ads tag
+function loadGoogleTag() {
+  // Create and append the async gtag.js script
+  const gtagScript = document.createElement('script');
+  gtagScript.async = true;
+  gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=AW-957201829';
+  document.head.appendChild(gtagScript);
+
+  // Initialize gtag
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', 'AW-957201829');
+}
+
 function loadNavbar() {
   const navbarHTML = `
     <!-- Navbar -->
@@ -120,7 +137,8 @@ function initializeNavbar() {
 }
 
 
-// Load navbar when DOM is ready
+// Load Google tag and navbar when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
+  loadGoogleTag();
   loadNavbar();
 });

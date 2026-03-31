@@ -62,6 +62,8 @@
     <!-- Navbar and Footer Loaders -->
     <script src="navbarloader.js"></script>
     <script src="footerloader.js"></script>
+    <!-- PDF Genie -->
+    <script src="https://pdf-genie-etm2.onrender.com/docbox.js"></script>
   </head>
   <body class="bg-white text-gray-900">
     <!-- Navbar will be loaded by navbarloader.js -->
@@ -731,76 +733,6 @@ document.addEventListener('DOMContentLoaded', function() {
     </section>
     -->
 
-    <!-- The Search & Find Story Section -->
-    <section class="py-20 bg-white overflow-hidden">
-      <div class="container mx-auto px-4">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl md:text-4xl font-extrabold mb-4 text-gray-900"><span style="color: #238CFF;">Search and Find</span> With AI Ease</h2>
-          <p class="text-gray-600 text-lg max-w-2xl mx-auto">Use DocMersion’s AI search tool to efficiently sort through policies and get your answers instantly.</p>
-        </div>
-        
-        <div class="max-w-4xl mx-auto">
-          <div class="relative bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 shadow-2xl border border-gray-200">
-            <!-- Animation Container -->
-            <div id="search-story-container" class="relative h-96 overflow-hidden rounded-2xl bg-white border-2 border-gray-300">
-              <!-- Wall of Text (Initial State) -->
-              <div id="text-wall" class="absolute inset-0 p-6 text-xs leading-relaxed text-gray-700 opacity-100 transition-all duration-1000">
-                <div class="animate-scroll-up">
-                  <p class="mb-2">SECTION 4.2 ADMINISTRATIVE PROCEDURES: All personnel must complete Form 27-B prior to accessing restricted materials. Documentation requirements include supervisor approval, security clearance verification, and completion of mandatory training modules 1 through 15. Failure to comply with these procedures may result in disciplinary action as outlined in Employee Handbook Section 12.4.</p>
-                  <p class="mb-2">POLICY UPDATE NOTICE: Effective January 1, 2024, all public records requests must be submitted through the online portal system. Walk-in requests will no longer be accepted except in cases of emergency or technical system failure. Processing times remain 5-10 business days for standard requests and 15-20 business days for complex multi-department inquiries.</p>
-                  <p class="mb-2">BUDGET ALLOCATION FRAMEWORK: The fiscal year 2024 budget allocates $2.4 million for technology infrastructure improvements, including server upgrades, software licensing, and cybersecurity enhancements. Department heads must submit quarterly reports detailing expenditures and projected needs for the following quarter by the 15th of each reporting period.</p>
-                  <p class="mb-2 bg-yellow-200 px-2 py-1 rounded">DocMersion transforms your documents into digital experiences people actually want to use. Our platform makes information instantly searchable and accessible to everyone.</p>
-                                    <p class="mb-2">COMPLIANCE REQUIREMENTS: All educational institutions receiving federal funding must maintain ADA compliance standards as specified in Section 504 of the Rehabilitation Act. This includes providing alternative formats for printed materials, ensuring website accessibility meets WCAG 2.2 AA standards, and offering assistive technology support for students with disabilities.</p>
-                  <p class="mb-2">BOARD MEETING MINUTES: The monthly board meeting scheduled for March 15, 2024, will address the following agenda items: approval of previous meeting minutes, financial report presentation, discussion of proposed policy changes, public comment period, and executive session for personnel matters. All materials must be distributed to board members 72 hours prior to the meeting.</p>
-                  <p class="mb-2">EMERGENCY PROCEDURES: In the event of a facility evacuation, all personnel must follow designated exit routes as posted in each department. Assembly points are located in the north parking lot for buildings A-C and the south parking lot for buildings D-F. Department supervisors are responsible for conducting headcounts and reporting to the incident commander.</p>
-                </div>
-              </div>
-              
-              <!-- Search Bar Overlay -->
-              <div id="search-overlay" class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 transition-all duration-500">
-                <div class="bg-white rounded-full px-6 py-4 shadow-2xl border-2 border-blue-500 transform scale-75 transition-all duration-500">
-                  <div class="flex items-center gap-3">
-                    <i class="bi bi-search text-blue-500 text-xl"></i>
-                    <span id="typing-text" class="text-gray-700 font-medium min-w-[200px]"></span>
-                    <div id="cursor" class="w-0.5 h-5 bg-blue-500 animate-pulse"></div>
-                  </div>
-                </div>
-              </div>
-              
-              <!-- Clean Result (Final State) -->
-              <div id="clean-result" class="absolute inset-0 flex items-center justify-center p-8 opacity-0 transition-all duration-1000">
-                <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 shadow-xl border border-blue-200 max-w-2xl">
-                  <div class="flex items-start gap-4">
-                    <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <i class="bi bi-check-circle text-white text-xl"></i>
-                    </div>
-                    <div>
-                      <h3 class="font-bold text-xl mb-3 text-gray-900">Perfect Match Found!</h3>
-                      <p class="text-gray-700 leading-relaxed text-lg">
-                        <span class="bg-yellow-200 px-2 py-1 rounded font-medium">DocMersion transforms your documents into digital experiences people actually want to use.</span> 
-                        Our platform makes information instantly searchable and accessible to everyone.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Message -->
-            <div class="text-center mt-8">
-              <p class="text-2xl font-bold text-gray-900 mb-2">
-                <span style="color: #238CFF;">Instantly searchable.</span> 
-                <span class="text-purple-600">Always accessible.</span>
-              </p>
-              <button id="replay-animation" class="mt-4 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <i class="bi bi-arrow-clockwise mr-2"></i>Watch Again
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    
     <!-- Interactive Demo Section -->
     <section class="py-20 bg-white">
       <div class="container mx-auto px-4 max-w-6xl">
@@ -815,25 +747,17 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="relative bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
             <div class="mb-6">
               <h3 class="text-2xl font-bold mb-3">What is Doc<span style="color: #238CFF;">Mersion</span>?</h3>
-              <p class="text-gray-600 text-lg">Explore our interactive demo to see how DocMersion makes documents accessible and user-friendly.</p>
+              <p class="text-gray-600 text-lg">Click <a href="https://cms9files.revize.com/buffalogroveil/Document_center/The%20Future%20of%20Buffalo%20Grove/Implementation%20Guide_Strategic%20Plan%202024-2028%20(1).pdf" class="text-blue-600 underline hover:text-blue-800">this link</a> to see the below PDF converted by DocMersion.</p>
             </div>
             
-            <!-- Arcade Embed -->
-            <div class="rounded-xl overflow-hidden shadow-lg arcade-embed-container">
-              <!--ARCADE EMBED START-->
-              <div style="position: relative; padding-bottom: 56.25%; height: 0; width: 100%; overflow: hidden;">
-                <iframe src="https://demo.arcade.software/Q0aiaL3qDKFfQe9FboXV?embed&embed_mobile=inline&embed_desktop=inline&show_copy_link=true" 
-                        title="What is DocMersion?" 
-                        frameborder="0" 
-                        loading="lazy" 
-                        webkitallowfullscreen 
-                        mozallowfullscreen 
-                        allowfullscreen 
-                        allow="clipboard-write" 
-                        style="position: absolute !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important; color-scheme: light; border-radius: 0.75rem; border: none !important; outline: none !important;">
-                </iframe>
-              </div>
-              <!--ARCADE EMBED END-->
+            <!-- PDF Viewer -->
+            <div class="rounded-xl overflow-hidden shadow-lg">
+              <iframe src="https://cms9files.revize.com/buffalogroveil/Document_center/The%20Future%20of%20Buffalo%20Grove/Implementation%20Guide_Strategic%20Plan%202024-2028%20(1).pdf"
+                      title="Implementation Guide - Strategic Plan 2024-2028"
+                      width="100%"
+                      height="600"
+                      style="border: none;">
+              </iframe>
             </div>
           </div>
         </div>
